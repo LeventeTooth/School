@@ -30,3 +30,13 @@ function sevenDaysAgo(a){
     xhttp.open("GET", `https://api.open-meteo.com/v1/forecast?${a}&past_days=10&hourly=temperature_2m`)
     xhttp.send()
 }
+
+
+// cer console.error()
+// fre array.forEach(currentItem => {})
+// nfn const add = (params) => {}
+// clg console.log()
+// prom return new Promise((resolve, reject) => {});
+// thenc .then((res) => {}).catch((err) => {});
+// ccl console.clear()
+// clt  console.table()
