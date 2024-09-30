@@ -1,0 +1,32 @@
+body{
+    padding-top: 20px;
+}
+#button{
+    display: none;
+}
+p{
+    margin-top: 10px;
+}
+#a li {
+    background-color: gray;
+    border-bottom: solid black 2px;
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+    color: white;
+    font-size: 2rem;
+    transition: background-color 1s, color 1s;
+}
+#a li:nth-child(odd) {
+    background-color: darkgrey;
+}
+#a li:hover{
+    background: rgba(255, 255, 255, 0.1);
+    color: black;
+}
+#a li:first-child{
+    
+    border-top: solid black 2px;
+}
+#a{
+    border-radius: 20px;
+}
