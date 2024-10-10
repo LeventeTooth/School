@@ -1,7 +1,7 @@
 <?php
 
 $server = 'localhost';
-$username = 'root';
+$username = "root";
 $password = "";
 $database = "torpetarna";
 $port = "3306";
@@ -17,5 +17,6 @@ try {
         $port
     );
 } catch (\Throwable $th) {
-    die("Nem jo");
+    die("Problem during connect, contact admin.");
 }
+

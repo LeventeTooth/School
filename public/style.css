@@ -1,18 +1,21 @@
-#pwreq{
-    list-style-type: none;
-    padding: 0;
+#pwreq {
+  list-style-type: none;
+  padding: 0;
 }
-#passwordContainer{
+
+#passwordContainer {
     position: relative;
-   /*  display: inline-block; */
-}
-#password{
+ }
+
+#password {
     padding-right: 30px;
     width: 100%;
 }
-#eyeIcon{
+
+#eye-icon {
     position: absolute;
     right: 10px;
-    margin-top: -1.7rem;
+    top:50%;
+    transform: translateY(-50%);
     cursor: pointer;
 }

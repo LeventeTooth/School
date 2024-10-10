@@ -1,24 +1,31 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebshopLogin</title>
+    <title>Webshop and authentication system</title>
+
+    <link rel="shortcut icon" href="../public/img/favaxe.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <!-- My CSS -->
     <link rel="stylesheet" href="../public/style.css">
-    <link rel="shortcut icon" href="../public/img/icon.png" type="image/x-icon">
-    <script src="https:/kit.fontawesome.com/b8d8792df0.js" crossorigin="anonymous"></script>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/b8d8792df0.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Törpe Tárnák</a>
@@ -41,7 +48,7 @@ session_start();
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registration.php">Regisztráció</a>
+                            <a class="nav-link" href="registration.php">Registration</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
@@ -51,29 +58,44 @@ session_start();
                                 <a class="dropdown-item" href="#">Action 2</a>
                             </div>
                         </li>
-                        <li>
-                            <h4>Bejelentkezes</h4>
-                            <form action="../controllers/login.php" method="POST">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput"
-                                        placeholder="name@example.com" id="login_username" name="login_username">
-                                    <label for="floatingInput">Felhasznalonev</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword"
-                                        placeholder="Password" id="login_password" name="login_password">
-                                    <label for="floatingPassword" >Jelszo</label>
-                                </div>
-                                <div class="text-center">
+                        <?php
+                        if (isset($_SESSION["username"])) {
+                            echo '<li class="nav-item mt-3">
+                            <div class="col-12">
+                                <form action="../controllers/logout.php" method="POST">
+                                   <div class="text-center">
+                                        <button class="btn btn-danger" name="submit" type="submit" id="submit">Kijelentkezés</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>';
+                        } else {
+                            echo '<li class="nav-item mt-3">
+                            <div class="col-12">
+                                <h4 class="text-center mb-2">Bejelentkezés</h4>
+                                <form action="../controllers/login.php" method="POST">
+                                    <input class="form-control mb-2" type="text" name="login_username"
+                                        id="login_username">
+                                    <input class="form-control mb-2" type="password" name="login_password"
+                                        id="login_password">
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" name="submit" type="submit"
+                                            id="submit">Bejelentkezés</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>';
+                        }
 
-                                    <button type="submit" name="submit" class="btn btn-primary mt-2">Belepes</button>
-                                </div>
-                            </form>
-                        </li>
+                        ?>
+
+
+
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+    <!-- END Navbar -->
 
-    <div class="container mt3" id="mainContent">
+    <div class="container mt-3" id="mainContent">
