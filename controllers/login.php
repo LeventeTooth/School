@@ -35,6 +35,7 @@ else {
         session_start();
         
         echo 'Bejelentkezés sikeres!';
+        $_SESSION["id"] =$userData["id"];
         $_SESSION["username"] = $userData["username"];
         $_SESSION["email"] = $userData["email"];
 
