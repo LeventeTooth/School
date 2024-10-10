@@ -9,7 +9,8 @@ require_once 'header.php';
                 <h4 class="card-title">Registration</h4>
                 <p class="card-text text-danger">Input fields with * shall be field</p>
                 <hr class="mb-3">
-                <form action="../controllers/register.php" method="POST">
+                <!-- onsubmit="formValidate()" -->
+                <form action="../controllers/register.php" method="POST"  >
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId"
@@ -187,7 +188,26 @@ require_once 'header.php';
     
         }
     }
+    const formValidate = () => {
+        let hasErroe =false
+        event.preventDefault()
+        password = document.getElementById("password")
+        passwordConfirm = document.getElementById("passwordConfirm")
+        if(password.value!=passwordConfirm.value){
+            password.setAttribute("style", "border-color: red !important")
+            passwordConfirm.setAttribute("style", "border-color: red !important")
+            hasErroe =true
 
+        }
+        if(hasErroe){
+            event.preventDefault();
+            console.log("Form prevented from submiting");
+        }
+        else{
+            let form =document.getElementById("registerForm")
+            /* form.setAttribute("action", "../controllers/register.php") */
+        }
+    }
 </script>
 <?php
 require_once 'footer.php';
