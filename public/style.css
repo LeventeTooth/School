@@ -1,0 +1,24 @@
+#textBox{
+    background-color: whitesmoke;
+    border: solid black 2px;
+    border-radius: 20px;
+}
+body{
+    background-color: gray;
+}
+h1{
+    margin: 20px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+  }
+  .backColor{
+    background-color: rgb(160, 180, 180);
+    padding: 40px;
+    border: solid black 2px;
+    border-radius: 20px;
+  }
