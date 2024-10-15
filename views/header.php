@@ -39,7 +39,14 @@
                     <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i> Kosar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="fa-solid fa-right-to-bracket"></i> Belepes</a>
+                    <?php 
+                        if (!isset($_SESSION["username"])) {
+                             echo '<a class="nav-link" href="login.php"><i class="fa-solid fa-right-to-bracket"></i> Belepes</a>';
+                        }
+                        else {
+                            echo '<a class="nav-link" href="../controllers/logout.php"><i class="fa-solid fa-door-open"></i> Kijelentkezés</a>';
+                        }
+                    ?>
                 </li>
             </ul>
         </div>

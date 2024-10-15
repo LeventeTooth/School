@@ -19,3 +19,14 @@
     transform: translateY(-50%);
     cursor: pointer;
 }
+.mySize{
+    height: 300px;
+}
+.container {
+    position: relative; /* Lehetővé teszi a gyermek elemek pozicionálását */
+    min-height: 88.1vh; /* Minimum magasság, hogy a container kitöltse a képernyőt */
+    padding-bottom: 50px; /* Hely a rendelés div számára */
+}
+#AnotherAddress {
+    display: none;
+}

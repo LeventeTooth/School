@@ -1,7 +1,4 @@
 </div>
-    <!-- My Script -->
-<!--     <script src="../public/scripts.js"> -->
-    </script>
 </body>
-
+<script src="../public/main.js"></script>
 </html>
