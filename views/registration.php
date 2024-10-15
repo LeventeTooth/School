@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php require_once 'header.php'; ?>
 <!-- Main Content Div után-->
 <div class="row">
@@ -52,7 +52,7 @@
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId"
-                            placeholder="" required value="<?php if(isset($_POST['email'])) echo $_GET['email']; ?>"/>
+                            placeholder="" required value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"/>
                         <small id="helpId" class="form-text text-muted">E-mail address to verify your
                             registration.</small>
                     </div>

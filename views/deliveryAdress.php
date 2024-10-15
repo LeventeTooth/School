@@ -1,15 +1,16 @@
 <?php require_once 'header.php'; ?>
 <!-- Main Content Div után-->
 <h1>Szallitasi adatok</h1>
-<form method="GET">
+
+<form action="../controllers/cartUpload.php" method="POST">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="fullName" name="fullName" placeholder=""
-                value="<?php echo $_SESSION['fullName'] ?>">
+                value="<?php if(isset($_SESSION['fullName'])) echo $_SESSION['fullName'] ?>">
             <label for="fullName">Teljes nev</label>
         </div>
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="email" name="email" placeholder=""
-                value="<?php echo $_SESSION['email'] ?>">
+                value="<?php if(isset($_SESSION['email']))echo $_SESSION['email'] ?>">
             <label for="email">Email cim</label>
         </div>
 
