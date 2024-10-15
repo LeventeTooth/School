@@ -53,18 +53,20 @@ if (empty($username) || empty($password) || empty($passwordConfirm) || empty($em
             $result = mysqli_query($connection, $user_query);
 
             if (mysqli_num_rows($result) != 0) {
-                header('Location: ../views/registration.php?status=registrationError&error=userExist&username='.$username);
+                header('Location: ../views/registration.php?status=registrationError&error=userExist&username=' . $username);
                 die('Van ilyen felhasználónév, válassz másikat.');
             } else {
                 /* Adatbázisba feltölt */
                 $sql_query = 'INSERT INTO `users`(`username`, `password`, `email`, `fullName`) 
-                VALUES ("' . $username . '", "' . $hashedPassword . '", "' . $email . '", "' . $fullName .'");';
+VALUES ("' . $username . '", "' . $hashedPassword . '", "' . $email . '", "' . $fullName . '");';
                 echo $sql_query;
                 mysqli_query($connection, $sql_query);
-                echo 'Registration complete';
 
-                /* Visszairányítom a főoldalra. */
-                header('Location: ../views/index.php?status=registrationSuccess');
+                echo "<script>alert('Sikeres regisztráció!');</script>";
+
+                // Visszairányítom a főoldalra
+                echo "<script>window.location.href = '../views/index.php?status=registrationSuccess';</script>";
+
             }
         }
     }

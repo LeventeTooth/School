@@ -11,8 +11,8 @@ if (isset($_POST['submit']) == false) { /* meg lett-e nyomva a submit gomb */
 
 require '../database/database.php';
 
-$username = mysqli_real_escape_string($connection, $_POST['login_username']);
-$password = mysqli_real_escape_string($connection, $_POST['login_password']);
+$username = mysqli_real_escape_string($connection, $_POST['username']);
+$password = mysqli_real_escape_string($connection, $_POST['password']);
 
 /* Van-e ilyen felhasználó? */
 /* Van-e ilyen felhasználó */
@@ -37,10 +37,8 @@ else {
         echo 'Bejelentkezés sikeres!';
         $_SESSION["username"] = $userData["username"];
         $_SESSION["email"] = $userData["email"];
-
-        header("Location: ../views/index.php?status=success");
-        echo"You gli";
-        exit();
-    }
+        
+        echo "<script>window.location.href = '../views/index.php?status=loggedIn';</script>";
+}
 }
 
